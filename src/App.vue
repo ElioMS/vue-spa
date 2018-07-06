@@ -1,28 +1,52 @@
 <template>
-  <div id="app">
-    <img src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+    <div id="app">
+        <nav class="navbar navbar-expand-lg fixed-top row">
+            <a class="navbar-brand" href="#">Navbar</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active"> <router-link to="/"> Home </router-link> </li>
+                    <li class="nav-item active"> <router-link to="/proyectos"> Proyectos </router-link> </li>
+                </ul>
+            </div>
+        </nav>
+
+        <div class="container" style="margin-bottom: 30px;">
+            <router-view/>
+        </div>
+        <!--<h2> Otras páginas </h2>-->
+
+        <footer> Vue SPA + Laravel WS </footer>
+    </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
 export default {
-  name: 'app',
-  components: {
-    HelloWorld
-  }
+    name: 'app',
 }
 </script>
 
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+<style scoped>
+
+    .container {
+        margin-top: 50px;
+    }
+
+    body {
+        margin-bottom: 15px;
+    }
+
+    footer {
+        text-align: center;
+        position: fixed;
+        bottom: 0;
+        background-color: black;
+        color: white;
+        width: 100%;
+    }
+
 </style>
+
+
